@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import tabula
 
 
 
@@ -83,6 +84,9 @@ import numpy as np
 # WFdatabase.to_excel(r'ManipulatedData.xlsx', index = False)
 
 
-
-
+#
+# for i in range(1,78):
+#     df = "./PdfResult/{}.pdf".format(i)
+#     output = "./CsvResult/{}.csv".format(i)
+#     tabula.convert_into(df, output, output_format="csv", stream=True)
 
