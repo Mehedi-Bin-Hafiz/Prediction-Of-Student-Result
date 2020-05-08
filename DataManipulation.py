@@ -84,9 +84,60 @@ import tabula
 # WFdatabase.to_excel(r'ManipulatedData.xlsx', index = False)
 
 
-#
 # for i in range(1,78):
 #     df = "./PdfResult/{}.pdf".format(i)
 #     output = "./CsvResult/{}.csv".format(i)
 #     tabula.convert_into(df, output, output_format="csv", stream=True)
+
+
+
+# #########################CSV to excel conversion#######################
+#
+# for i in range(6,78):
+#     df = "./CsvResult/{}.csv".format(i)
+#     read_file = pd.read_csv (df,'r')
+#     read_file.to_excel (r'Excelfile.xlsx', index = None, header=False)
+#
+
+# #########Algorithm  step 2 of data manipulation ######
+#
+#
+# main=pd.read_excel(r'WithoutMid.xlsx',index=False).fillna(0)
+# maindata=main.loc[main['Final'] != 0 ]
+# GrandMark=maindata.iloc[:, 6: ].values
+# TotalMark=[]
+# for i in range(0,len(GrandMark)):
+#     TotalMark.append(GrandMark.item(i))
+# #print(TotalMark)
+#
+# attendance=[]
+# for i in TotalMark:
+#     tm = i
+#     p = tm / 100
+#     attendance.append(7 * p)
+#
+# maindata.insert(1,"Attendance",attendance,True)
+#
+#
+# Sumdata=maindata[['Quiz',"Attendance",'Presentation','Assignment','Final']].astype(float).sum(1)
+#
+# MidMark= maindata["TotalMark"]-Sumdata
+#
+# maindata.insert(4,"Mid",MidMark,True)
+# maindata=maindata[['Quiz',"Attendance",'Presentation','Assignment','Mid','Final','TotalMark','GPA']]
+# maindata.to_excel(r'ManipulatedData2.xlsx', index=False)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
