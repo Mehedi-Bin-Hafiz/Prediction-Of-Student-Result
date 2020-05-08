@@ -127,6 +127,12 @@ import tabula
 # maindata=maindata[['Quiz',"Attendance",'Presentation','Assignment','Mid','Final','TotalMark','GPA']]
 # maindata.to_excel(r'ManipulatedData2.xlsx', index=False)
 
+# ####################### Third step of manipulation ####################
+
+# main=pd.read_excel(r'missing.xlsx',index=False).fillna(0)
+# maindata=main.loc[main['Final'] != 0 ]
+# maindata=maindata[['Quiz',"Attendance",'Presentation','Assignment','Mid','Final','TotalMark','GPA']]
+# maindata.to_excel(r'ManipulatedData3.xlsx', index=False)
 
 
 
