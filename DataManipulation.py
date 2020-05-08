@@ -136,6 +136,10 @@ import tabula
 
 
 
+##########Creating final database###########
+# main=pd.read_excel(r'ManipulatedData.xlsx',index=False)
+# maindata=main.loc[main['Final'] > 0 ]
+# maindata.to_excel(r'Database.xlsx', index=False)
 
 
 
