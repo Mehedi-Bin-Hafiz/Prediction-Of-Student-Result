@@ -18,9 +18,9 @@ from sklearn.neural_network import MLPClassifier
 MainDatabase = pd.read_excel(r'Database.xlsx')
 #print(MainDatabase.head())
 # base on database we will set iloc
-x = MainDatabase.iloc[:, :6].values  #independent variables
+x = MainDatabase.iloc[:, :5].values  #independent variables
 # print(x)
-y = MainDatabase['TotalMark'].values #dependent variables
+y = MainDatabase['Final'].values #dependent variables
 y=y.astype('int') ### note y must be integer all time other wise ValueError: Unknown label type: 'continuous' is produced.
 # print(y)
 #datauserate
@@ -228,6 +228,45 @@ clf=RandomForestClassifier(n_estimators=100)
 clf.fit(X_train,y_train)
 y_pred=clf.predict(X_test)
 print("test size=70, accuracy = {0:.2f}".format(100*metrics.accuracy_score(y_test, y_pred)),"%")
+
+
+
+
+print("\n########## Neural Network algorithm ###########")
+
+mpl = MLPClassifier(max_iter=1000,alpha=1,random_state=0)
+X_train, X_test, y_train, y_test=train_test_split(x, y, test_size=thirtypercent, random_state=0)
+mpl.fit(X_train, y_train)
+pred = mpl.predict(X_test)
+score=metrics.accuracy_score(y_test, pred)
+print("test size=30, accuracy = {0:.2f}".format(100*score),"%")
+
+
+X_train, X_test, y_train, y_test=train_test_split(x, y, test_size=fourtypercent, random_state=0)
+mpl.fit(X_train, y_train)
+pred = mpl.predict(X_test)
+score=metrics.accuracy_score(y_test, pred)
+print("test size=40, accuracy = {0:.2f}".format(100*score),"%")
+
+
+X_train, X_test, y_train, y_test=train_test_split(x, y, test_size=fiftypercent, random_state=0)
+mpl.fit(X_train, y_train)
+pred = mpl.predict(X_test)
+score=metrics.accuracy_score(y_test, pred)
+print("test size=50, accuracy = {0:.2f}".format(100*score),"%")
+
+
+X_train, X_test, y_train, y_test=train_test_split(x, y, test_size=sixtypercent, random_state=0)
+mpl.fit(X_train, y_train)
+pred = mpl.predict(X_test)
+score=metrics.accuracy_score(y_test, pred)
+print("test size=60, accuracy = {0:.2f}".format(100*score),"%")
+
+X_train, X_test, y_train, y_test=train_test_split(x, y, test_size=seventypercent, random_state=0)
+mpl.fit(X_train, y_train)
+pred = mpl.predict(X_test)
+score=metrics.accuracy_score(y_test, pred)
+print("test size=70, accuracy = {0:.2f}".format(100*score),"%")
 
 
 
