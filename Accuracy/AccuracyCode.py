@@ -19,7 +19,7 @@ MainDatabase = pd.read_excel(r'Database.xlsx')
 #print(MainDatabase.head())
 # base on database we will set iloc
 x = MainDatabase.iloc[:, :5].values  #independent variables
-# print(x)
+print(x)
 y = MainDatabase['Final'].values #dependent variables
 y=y.astype('int') ### note y must be integer all time other wise ValueError: Unknown label type: 'continuous' is produced.
 # print(y)
