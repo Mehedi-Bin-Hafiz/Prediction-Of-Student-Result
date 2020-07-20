@@ -46,7 +46,16 @@ for ind in RealMark.index:
 
 print(predictedFinal)
 print(RealFinal)
+
+
+########### vvi code for paper#########
+plt.rcParams.update({'font.size': 8})
+plt.rcParams["font.family"] = "Times New Roman"
+
+
 #############  Line graph  ##############
+
+
 XandYLen=[]
 for i in range(1,len(RealFinal)+1):
     XandYLen.append(i)
@@ -183,3 +192,54 @@ ax.legend()
 plt.grid()
 plt.show()
 
+
+########################pie Chart of full graph#####################
+
+RealSgpa = MainDatabase['SGPA'].values
+
+Real4=0
+Real375=0
+Real350=0
+Real325=0
+Real3=0
+
+Real275=0
+Real250=0
+Real225=0
+Real2=0
+
+Real175=0
+Real150=0
+Real125=0
+Real1=0
+
+Real0=0
+
+for  i in range(len(RealSgpa)):
+    if RealSgpa[i]==4:
+        Real4 += 1
+    elif RealSgpa[i]>=3.75 and RealSgpa[i]<4:
+        Real375 +=1
+    elif RealSgpa[i]>=3.50 and RealSgpa[i]<3.75:
+        Real350 +=1
+    elif RealSgpa[i]>=3.25 and RealSgpa[i]<3.50:
+        Real325 +=1
+    elif RealSgpa[i]>=3.00 and RealSgpa[i]<3.25:
+        Real3 +=1
+    elif RealSgpa[i]>=2.75 and RealSgpa[i]<3.00:
+        Real275 +=1
+    elif RealSgpa[i]>=2.50 and RealSgpa[i]<2.75:
+        Real250 +=1
+    elif RealSgpa[i]>=2.25 and RealSgpa[i]<2.50:
+        Real225 +=1
+    elif RealSgpa[i]>=2.00 and RealSgpa[i]<2.25:
+        Real2 +=1
+
+
+sizes=Real4,Real375,Real350,Real325,Real3,Real275,Real250,Real225,Real2
+explode = (0.1,0.017,0.017,0.017,0.017,0.017,0.017,0.017,0.017)
+labels=['4','3.75','3.50','3.25','3.00','2.75','2.50','2.25','2.00']
+#autopact show percentage inside graph
+plt.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',)
+plt.axis('equal')
+plt.show()
