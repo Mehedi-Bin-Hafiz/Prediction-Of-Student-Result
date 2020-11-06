@@ -27,8 +27,6 @@ y=y.astype('int') ### note y must be integer all time other wise ValueError: Unk
 
 
 
-
-
 thirtypercent=0.30  # training size 70%
 fourtypercent=0.40   # training size 60%
 fiftypercent=0.50    # training size 50%

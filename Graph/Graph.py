@@ -49,7 +49,7 @@ print(RealFinal)
 
 
 ########### vvi code for paper#########
-plt.rcParams.update({'font.size': 8})
+plt.rcParams.update({'font.size': 10})
 plt.rcParams["font.family"] = "Times New Roman"
 
 
@@ -65,6 +65,7 @@ plt.plot(XandYLen,predictedFinal,color='green',linewidth=2)
 axes.set_yticks([0, 5, 10, 15, 20, 25, 30, 35, 40, 45,50])
 plt.grid()
 plt.legend(['Real Marks','Predicted Marks'])
+plt.savefig(" real vs prediction.png")
 plt.show()
 
 
@@ -190,6 +191,7 @@ ax.set_xticks(x)
 ax.set_xticklabels(labels)
 ax.legend()
 plt.grid()
+plt.savefig(" bar grpah.png")
 plt.show()
 
 
@@ -237,9 +239,10 @@ for  i in range(len(RealSgpa)):
 
 
 sizes=Real4,Real375,Real350,Real325,Real3,Real275,Real250,Real225,Real2
-explode = (0.1,0.017,0.017,0.017,0.017,0.017,0.017,0.017,0.017)
+explode = (0.07,0.017,0.017,0.017,0.017,0.017,0.017,0.017,0.017)
 labels=['4','3.75','3.50','3.25','3.00','2.75','2.50','2.25','2.00']
 #autopact show percentage inside graph
 plt.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',)
 plt.axis('equal')
+plt.savefig(" pie.png")
 plt.show()
