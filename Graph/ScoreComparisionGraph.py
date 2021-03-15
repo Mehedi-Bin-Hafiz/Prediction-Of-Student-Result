@@ -21,13 +21,13 @@ recalllis=list()
 Accuracylis=list()
 
 
-df = pd.read_excel('../Accuracy/Database.xlsx')
+df = pd.read_excel('../Database/Database.xlsx')
 
 
 
 
 
-MainDatabase = pd.read_excel('../Accuracy/Database.xlsx')
+MainDatabase = pd.read_excel('../Database/Database.xlsx')
 #print(MainDatabase.head())
 # base on database we will set iloc
 x = MainDatabase.iloc[:, :5].values  #independent variables
